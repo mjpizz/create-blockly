@@ -1,0 +1,39 @@
+{
+
+  "name": "create-blockly",
+  "version": "0.0.1",
+  "description": "quickly bootstrap Blockly instances in node and browser",
+
+  "keywords": [
+    "blockly",
+    "editor",
+    "visual",
+    "coding",
+    "sandbox"
+  ],
+
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/mjpizz/create-blockly.git"
+  },
+
+  "main": "./index.js",
+
+  "dependencies": {
+    "rfile": "1.x",
+    "rfileify": "1.x",
+    "iframe": "0.x"
+  },
+
+  "browserify": {
+    "transform": ["rfileify"]
+  },
+
+  "license": "MIT",
+
+  "author": {
+    "name": "Matt Pizzimenti",
+    "url": "http://mjpizz.com"
+  }
+
+}
