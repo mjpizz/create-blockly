@@ -1,6 +1,16 @@
 .DS_Store
 *.pyc
 node_modules
+
+# Exclude all Blockly source files.
 ext/blockly/*
+
+# Allow pre-built modules from Blockly.
 !ext/blockly/*_compressed.js
+
+# Allow translation files from Blockly.
+!ext/blockly/msg
+ext/blockly/msg/*
+!ext/blockly/msg/js
+ext/blockly/msg/js/*
 !ext/blockly/msg/js/*.js
