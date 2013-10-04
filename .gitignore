@@ -1,0 +1,6 @@
+.DS_Store
+*.pyc
+node_modules
+ext/blockly/*
+!ext/blockly/*_compressed.js
+!ext/blockly/msg/js/*.js
