@@ -32,8 +32,9 @@ var Blockly = createBlockly({
   // Make the default set of blocks available, with English translations.
   // (you can choose other translations like "create-blockly/Msg/zh_tw")
   extensions: [
-    require("create-blockly/Blocks"),
-    require("create-blockly/Msg/en")
+    require("create-blockly/Blocks"), // Blockly.Blocks
+    require("create-blockly/Msg/en"), // English translations
+    require("create-blockly/Javascript"), // Blockly.Javascript exporting
   ],
 
   // This is the toolbox that defines which blocks are visible.
@@ -41,6 +42,14 @@ var Blockly = createBlockly({
   toolbox: document.getElementById("my-toolbox")
 
 });
+
+// Whenever this Blockly editor changes, log the generated Javscript code.
+// More Blockly documentation at http://code.google.com/p/blockly/w/list
+Blockly.addChangeListener(function() {
+  var code = Blockly.Javascript.workspaceToCode();
+  console.log(code);
+});
+
 ```
 
 Create the associated "browser.html" to load the Javascript:
@@ -62,9 +71,13 @@ Create the associated "browser.html" to load the Javascript:
         <block type="controls_if"></block>
         <block type="controls_whileUntil"></block>
       </category>
-      <category name="Other">
-        <block type="controls_whileUntil"></block>
-        <block type="controls_if"></block>
+      <category name="Logic">
+        <block type="logic_boolean"></block>
+        <block type="logic_operation"></block>
+      </category>
+      <category name="Text">
+        <block type="text"></block>
+        <block type="text_print"></block>
       </category>
     </xml>
 
