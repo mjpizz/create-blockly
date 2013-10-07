@@ -14,3 +14,8 @@ ext/blockly/msg/*
 !ext/blockly/msg/js
 ext/blockly/msg/js/*
 !ext/blockly/msg/js/*.js
+ext/blockly/msg/js/.*
+
+# Allow media assets from Blockly.
+!ext/blockly/media
+ext/blockly/media/.*
