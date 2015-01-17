@@ -88,19 +88,21 @@ Create the associated "browser.html" to load the Javascript:
 Install helpers for the server:
 
 ```bash
-npm install express enchilada
+npm install express express-logger express-static enchilada
 ```
 
 Create the "server.js" to serve the demo:
 
 ```javascript
 var express = require("express");
+var expressLogger = require("express-logger");
+var expressStatic = require("express-static");
 var enchilada = require("enchilada");
 
 var app = express();
-app.use(express.logger());
+app.use(expressLogger());
 app.use(enchilada(__dirname));
-app.use(express.static(__dirname));
+app.use(expressStatic(__dirname));
 app.listen(1337);
 console.log("Running demo on localhost:1337")
 ```
